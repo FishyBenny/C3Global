@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <title>C3 Church Global | Spirit Filled Church with Locations Throughout the World</title>
+  <meta name="description" content="C3 Church Global is a family of churches, committed to helping people know Jesus in a fresh, personal way. Ask us about finding a C3 near you!">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: #000;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; height: auto; display: block; }
+
+    /* ── HEADER ── */
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: #fff;
+    }
+
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 17px 7%;
+    }
+
+    .logo { width: 280px; }
+    .logo img { width: 100%; }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 14px;
+      font-weight: 400;
+      letter-spacing: 1.54px;
+      text-transform: uppercase;
+      color: #000;
+      transition: opacity 0.2s;
+    }
+
+    .nav-links a:hover { opacity: 0.6; }
+
+    .burger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 8px;
+      background: none;
+      border: none;
+    }
+
+    .burger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: #000;
+      transition: transform 0.3s, opacity 0.3s;
+    }
+
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      background: #b6bcb2;
+      padding: 20px 40px 30px;
+    }
+
+    .mobile-menu.active { display: flex; }
+
+    .mobile-menu a {
+      font-size: 14px;
+      letter-spacing: 1.54px;
+      text-transform: uppercase;
+      padding: 11px 0;
+      color: #000;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      height: 85vh;
+      min-height: 500px;
+      background: url('assets/hero-bg.jpg') center center / cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.25);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 0 20px;
+      max-width: 800px;
+    }
+
+    .hero-content h2 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 300;
+      font-size: 18px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .hero-content h1 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 200;
+      font-size: 64px;
+      line-height: 1.1;
+      letter-spacing: 2px;
+    }
+
+    /* ── ABOUT SECTION ── */
+    .about-section {
+      padding: 80px 7%;
+      text-align: center;
+    }
+
+    .about-section .label {
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+      color: #000;
+    }
+
+    .about-section h3 {
+      font-weight: 300;
+      font-size: 28px;
+      margin-bottom: 24px;
+      line-height: 1.4;
+    }
+
+    .about-section .body-text {
+      font-weight: 300;
+      font-size: 15px;
+      line-height: 1.8;
+      max-width: 700px;
+      margin: 0 auto 32px;
+      color: #333;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 40px;
+      border: 1px solid #000;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .btn:hover {
+      background: #000;
+      color: #fff;
+    }
+
+    .btn-white {
+      border-color: #fff;
+      color: #fff;
+    }
+
+    .btn-white:hover {
+      background: #fff;
+      color: #000;
+    }
+
+    /* ── IMAGE BREAK ── */
+    .image-break {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+    }
+
+    /* ── FOUNDERS ── */
+    .founders-section {
+      display: flex;
+      align-items: stretch;
+      min-height: 600px;
+    }
+
+    .founders-image {
+      flex: 1;
+      background: url('assets/founders.jpg') center center / cover no-repeat;
+      min-height: 400px;
+    }
+
+    .founders-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 60px 7%;
+    }
+
+    .founders-content .label {
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+
+    .founders-content h3 {
+      font-weight: 300;
+      font-size: 20px;
+      margin-bottom: 24px;
+      line-height: 1.5;
+    }
+
+    .founders-content .body-text {
+      font-weight: 300;
+      font-size: 15px;
+      line-height: 1.8;
+      color: #333;
+      margin-bottom: 32px;
+    }
+
+    /* ── CARDS GRID ── */
+    .cards-section {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .card {
+      position: relative;
+      aspect-ratio: 300 / 346;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      cursor: pointer;
+      overflow: hidden;
+    }
+
+    .card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0);
+      transition: background 0.3s;
+    }
+
+    .card:hover::after {
+      background: rgba(0,0,0,0.15);
+    }
+
+    /* ── SOCIAL / BLOG SECTION ── */
+    .social-section {
+      display: flex;
+      align-items: stretch;
+      min-height: 500px;
+    }
+
+    .social-left {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 60px 40px;
+      background: #f5f5f0;
+    }
+
+    .social-left h3 {
+      font-weight: 300;
+      font-size: 28px;
+      margin-bottom: 24px;
+    }
+
+    .social-icon {
+      width: 50px;
+      height: 50px;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .social-icon svg {
+      width: 32px;
+      height: 32px;
+    }
+
+    .social-right {
+      flex: 1;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .social-right-inner {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .social-right-top {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 40px 60px;
+      background: #e8e8e0;
+    }
+
+    .social-right-top .label {
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .social-right-bottom {
+      flex: 1;
+      background: url('assets/conference.jpg') center center / cover no-repeat;
+    }
+
+    /* ── CTA BANNER ── */
+    .cta-section {
+      display: flex;
+      align-items: stretch;
+      min-height: 400px;
+    }
+
+    .cta-image {
+      flex: 1;
+      background: url('assets/cta-img.jpg') center center / cover no-repeat;
+      min-height: 300px;
+    }
+
+    .cta-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 60px 40px;
+      background: #b6bcb2;
+    }
+
+    .cta-content h3 {
+      font-weight: 300;
+      font-size: 32px;
+      margin-bottom: 28px;
+      color: #fff;
+    }
+
+    /* ── FOOTER ── */
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding: 50px 7%;
+      background: #fff;
+    }
+
+    .footer-brand { width: 210px; }
+    .footer-brand img { width: 100%; }
+
+    .footer-links {
+      display: flex;
+      gap: 60px;
+      flex-wrap: wrap;
+    }
+
+    .footer-col h4 {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 1.54px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .footer-col ul { list-style: none; }
+
+    .footer-col ul li {
+      margin-bottom: 8px;
+    }
+
+    .footer-col ul li a {
+      font-size: 14px;
+      font-weight: 300;
+      color: #333;
+      transition: color 0.2s;
+    }
+
+    .footer-col ul li a:hover { color: #000; }
+
+    .footer-bottom {
+      width: 100%;
+      padding-top: 30px;
+      margin-top: 30px;
+      border-top: 1px solid #eee;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .footer-bottom p {
+      font-size: 12px;
+      font-weight: 300;
+      color: #999;
+    }
+
+    .footer-bottom a {
+      font-size: 12px;
+      font-weight: 300;
+      color: #999;
+    }
+
+    /* ── RESPONSIVE ── */
+
+    @media (max-width: 1024px) {
+      .nav-links { display: none; }
+      .burger { display: flex; }
+
+      .header-inner {
+        padding: 12px 20px;
+      }
+
+      .logo { width: 200px; }
+
+      .hero { height: 70vh; }
+
+      .hero-content h1 { font-size: 42px; }
+
+      .founders-section {
+        flex-direction: column;
+      }
+
+      .founders-image {
+        min-height: 350px;
+      }
+
+      .cards-section {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .social-section {
+        flex-direction: column;
+      }
+
+      .social-right-top {
+        padding: 30px 40px;
+      }
+
+      .social-right-bottom {
+        min-height: 300px;
+      }
+
+      .cta-section {
+        flex-direction: column;
+      }
+
+      .cta-image {
+        min-height: 300px;
+      }
+
+      .footer-links {
+        gap: 30px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .header-inner {
+        padding: 10px 12px;
+      }
+
+      .logo { width: 170px; }
+
+      .hero {
+        height: 675px;
+        min-height: unset;
+      }
+
+      .hero-content h2 {
+        font-size: 14px;
+        letter-spacing: 2px;
+      }
+
+      .hero-content h1 {
+        font-size: 36px;
+      }
+
+      .about-section {
+        padding: 50px 24px;
+      }
+
+      .about-section h3 {
+        font-size: 22px;
+      }
+
+      .about-section .body-text {
+        font-size: 14px;
+      }
+
+      .image-break {
+        height: 300px;
+      }
+
+      .founders-section {
+        flex-direction: column;
+      }
+
+      .founders-image {
+        min-height: 280px;
+      }
+
+      .founders-content {
+        padding: 40px 24px;
+      }
+
+      .founders-content h3 {
+        font-size: 18px;
+      }
+
+      .cards-section {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .card {
+        aspect-ratio: 150 / 173;
+      }
+
+      .social-section {
+        flex-direction: column;
+      }
+
+      .social-left {
+        padding: 40px 24px;
+      }
+
+      .social-left h3 {
+        font-size: 22px;
+      }
+
+      .social-right-top {
+        padding: 30px 24px;
+      }
+
+      .social-right-bottom {
+        min-height: 250px;
+      }
+
+      .cta-section {
+        flex-direction: column;
+      }
+
+      .cta-image {
+        min-height: 250px;
+      }
+
+      .cta-content {
+        padding: 40px 24px;
+      }
+
+      .cta-content h3 {
+        font-size: 26px;
+      }
+
+      .footer {
+        padding: 40px 24px;
+        flex-direction: column;
+        gap: 30px;
+      }
+
+      .footer-brand {
+        width: 170px;
+        margin-bottom: 10px;
+      }
+
+      .footer-links {
+        flex-direction: column;
+        gap: 24px;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .mobile-menu a {
+        padding: 12px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <img src="assets/logo.png" alt="C3 Church Global">
+      </a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="/about-c3-church-global">About</a></li>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/events">Events</a></li>
+          <li><a href="/training">Training</a></li>
+          <li><a href="/giving">Giving</a></li>
+          <li><a href="/new-to-faith">New to Faith</a></li>
+          <li><a href="/find-a-church">Find a Church</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="burger" aria-label="Menu" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="/about-c3-church-global">About</a>
+      <a href="/blog/">Blog</a>
+      <a href="/events">Events</a>
+      <a href="/training">Training</a>
+      <a href="/giving">Giving</a>
+      <a href="/new-to-faith">New to Faith</a>
+      <a href="/find-a-church">Find a Church</a>
+      <a href="/contact">Contact</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <h2>C3 Church;</h2>
+      <h1>A Global Community</h1>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about-section">
+    <p class="label">C3 Church Global is an International Movement of Churches</p>
+    <h3>Christ-Centred, Spirit-Powered &amp; Connect-Driven.</h3>
+    <p class="body-text">We want people to know Jesus in a fresh, personal way; to have a real-time connection with God. We are a hospitable people &ndash; generous and fun and full of life &ndash; and we are committed to healthy and growing churches around the world. As an international family, our members can walk into any of our C3 Churches and know they&rsquo;re home.</p>
+    <a href="/about-c3-church-global" class="btn">Find Out More</a>
+  </section>
+
+  <!-- IMAGE BREAK -->
+  <img src="assets/about-img.jpg" alt="C3 Church community gathering" class="image-break">
+
+  <!-- FOUNDERS -->
+  <section class="founders-section">
+    <div class="founders-image"></div>
+    <div class="founders-content">
+      <p class="label">Our Founders</p>
+      <h3>Ps. Phil and Chris Pringle are the founders of the C3 Church Global movement.</h3>
+      <p class="body-text">Ever the brave pioneers, they set out from New Zealand in 1980 with a dream of starting a contemporary, relevant, and anointed church. Ps Phil is passionate about building faith filled, anointed churches that are motivated to reach the lost and make disciples. Ps Chris, or Mama Chris, as she is affectionately known, brings revelation, healing and joy wherever she goes, and everyone who meets her will find themselves inspired and encouraged.</p>
+      <a href="/about-phil-chris-pringle" class="btn">Meet the Pringles</a>
+    </div>
+  </section>
+
+  <!-- CARDS GRID -->
+  <section class="cards-section">
+    <a href="https://www.youtube.com/channel/UCrnbsxwsvBCMGZwK1XI-xfw" class="card" style="background-image: url('assets/card1.jpg');" target="_blank" rel="noopener"></a>
+    <a href="https://www.youtube.com/channel/UCrnbsxwsvBCMGZwK1XI-xfw" class="card" style="background-image: url('assets/card2.jpg');" target="_blank" rel="noopener"></a>
+    <a href="https://www.instagram.com/c3churchglobal/" class="card" style="background-image: url('assets/card3.jpg');" target="_blank" rel="noopener"></a>
+    <a href="https://www.liinks.co/c3churchglobal" class="card" style="background-image: url('assets/card4.jpg');" target="_blank" rel="noopener"></a>
+  </section>
+
+  <!-- SOCIAL / BLOG SECTION -->
+  <section class="social-section">
+    <div class="social-left">
+      <h3>Keep up with us on social</h3>
+      <a href="https://www.instagram.com/c3churchglobal/" target="_blank" rel="noopener" class="social-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+      </a>
+    </div>
+    <div class="social-right">
+      <div class="social-right-inner">
+        <div class="social-right-top">
+          <p class="label">Link to Key Info + Recent Content</p>
+          <a href="/blog/" class="btn">Keep Reading</a>
+        </div>
+        <div class="social-right-bottom"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="cta-image"></div>
+    <div class="cta-content">
+      <h3>We&rsquo;re A Friendly Bunch</h3>
+      <a href="/contact" class="btn btn-white">Get in Touch</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-brand">
+      <a href="/">
+        <img src="assets/logo.png" alt="C3 Church Global">
+      </a>
+    </div>
+    <div class="footer-links">
+      <div class="footer-col">
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="/about-c3-church-global">About</a></li>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/events">Events</a></li>
+          <li><a href="/training">Training</a></li>
+          <li><a href="/giving">Giving</a></li>
+          <li><a href="/new-to-faith">New to Faith</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Regions</h4>
+        <ul>
+          <li><a href="/region-c3-americas">Americas</a></li>
+          <li><a href="/region-c3-australia">Australia</a></li>
+          <li><a href="/region-c3-canada">Canada</a></li>
+          <li><a href="/region-c3-east-asia">East Asia</a></li>
+          <li><a href="/region-c3-europe">Europe</a></li>
+          <li><a href="/region-c3-indonesia">Indonesia</a></li>
+          <li><a href="/region-c3-pacific">Pacific</a></li>
+          <li><a href="/region-c3-philippines">Philippines</a></li>
+          <li><a href="/region-c3-south-asia">South Asia</a></li>
+          <li><a href="/region-c3-southern-africa">Southern Africa</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="/global-conference-2024">Global Conference 2024</a></li>
+          <li><a href="/resource-hub-login">Resource Hub</a></li>
+          <li><a href="/regional-office-login">Regional Office</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 C3 Church Global. All rights reserved.</p>
+      <a href="/privacy-policy">Privacy Policy</a>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('mobileMenu').classList.toggle('active');
+    }
+  </script>
+</body>
+</html>
