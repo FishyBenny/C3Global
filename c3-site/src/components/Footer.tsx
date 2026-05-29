@@ -78,7 +78,7 @@ export default function Footer() {
   return (
     <footer className="bg-[#f4f3f1]">
       <div className="hidden h-[480px] items-start px-10 pt-[49px] lg:flex">
-        <Link href="/" className="relative h-[269px] w-[200px] opacity-10">
+        <Link href="/" className="relative h-[269px] w-[200px]">
           <Image
             src="/footer-mark.png"
             alt="C3 Church Global"
